@@ -1,4 +1,4 @@
-# Toni hilft beim Deutschlernen
+# Tonis Sprachwelt
 
 Deutsch-Lernportal der Antonius Grundschule Kevelaer.
 
