@@ -83,12 +83,20 @@ const STORY_OPTIONS = {
 const FAVORITE_KEY = "toni-woerterbuch-favoriten";
 const OLD_FAVORITE_KEY = "mina-igel-favoriten";
 const DICTIONARY_ROUTES = ["dictionary", "favorites", ...Object.keys(BANDS)];
+const WRITING_AREAS = [
+  { name: "Schreibaufgaben", emoji: "✏️" },
+  { name: "Mini-Bücher", emoji: "📖" },
+  { name: "Geschichtenideen", emoji: "🎲" },
+  { name: "Starke Schreiber", emoji: "⭐" }
+];
 
 const state = {
   route: "portal",
   categories: Object.fromEntries(Object.entries(BANDS).map(([route, band]) => [route, band.allCategory])),
   query: "",
-  favorites: loadFavorites()
+  favorites: loadFavorites(),
+  writingArea: "",
+  writingCardIndex: 0
 };
 
 const views = {
@@ -111,6 +119,9 @@ const categoryTabs = document.querySelector("#category-tabs");
 const wordGrid = document.querySelector("#word-grid");
 const favoriteGrid = document.querySelector("#favorite-grid");
 const searchInput = document.querySelector("#search-input");
+const writingAreaGrid = document.querySelector("#writing-area-grid");
+const writingCardView = document.querySelector("#writing-card-view");
+const writingView = document.querySelector("#view-writing");
 const navButtons = document.querySelectorAll("[data-route]");
 const scrollTopButton = document.querySelector("#scroll-top-button");
 const rollStoryButton = document.querySelector("#roll-story-button");
@@ -132,6 +143,7 @@ searchInput.addEventListener("input", (event) => {
 });
 
 rollStoryButton.addEventListener("click", rollStory);
+writingView.addEventListener("click", handleWritingClick);
 window.addEventListener("scroll", updateScrollTopButton, { passive: true });
 setInterval(updateScrollTopButton, 250);
 scrollTopButton.addEventListener("click", scrollToTop);
@@ -182,6 +194,7 @@ function render() {
   updateDictionaryTools();
   renderHomeSearch();
   renderBandView();
+  renderWritingView();
   renderWordCards(favoriteGrid, getFavoriteWords(), "Tippe auf einen Stern. Dann findest du dein Wort hier wieder.");
 }
 
@@ -350,6 +363,167 @@ function renderWordCards(container, words, emptyText) {
   });
 }
 
+function renderWritingView() {
+  if (state.route !== "writing") {
+    return;
+  }
+
+  if (!state.writingArea) {
+    renderWritingSelection();
+    return;
+  }
+
+  const cards = getWritingCards(state.writingArea);
+  if (!cards.length) {
+    state.writingArea = "";
+    renderWritingSelection();
+    return;
+  }
+
+  state.writingCardIndex = Math.min(state.writingCardIndex, cards.length - 1);
+  renderWritingCard(cards[state.writingCardIndex], cards.length);
+}
+
+function renderWritingSelection() {
+  writingAreaGrid.hidden = false;
+  writingCardView.hidden = true;
+  writingCardView.innerHTML = "";
+  writingAreaGrid.innerHTML = WRITING_AREAS.map((area) => {
+    const count = getWritingCards(area.name).length;
+    return `
+      <button class="writing-area-tile" type="button" data-writing-area="${area.name}">
+        <span class="portal-emoji" aria-hidden="true">${area.emoji}</span>
+        <span>
+          <span class="tile-title">${area.name}</span>
+          <span class="tile-note">${count} Karten</span>
+        </span>
+      </button>
+    `;
+  }).join("");
+}
+
+function renderWritingCard(card, totalCards) {
+  writingAreaGrid.hidden = true;
+  writingCardView.hidden = false;
+  writingCardView.innerHTML = `
+    <article class="writing-task-card">
+      <div class="writing-card-topline">
+        <span class="card-number">Karte ${card.nummer} von ${totalCards}</span>
+        <span class="card-area">${card.bereich}</span>
+      </div>
+      <h3>${card.titel}</h3>
+      ${renderCardSection("✏️", "Auftrag", `<p>${card.auftrag}</p>`)}
+      ${renderCardSection("❓", "Denkfragen", renderCardList(card.fragen))}
+      ${renderCardSection("🟨", "So kannst du anfangen", renderCardList(card.satzanfaenge))}
+      ${renderCardSection("📝", "Worthelfer", renderWordChips(card.worthelfer))}
+      ${renderCardSection("⭐", "Schreibtipps", renderCardList(card.schreibtipps))}
+      ${renderCardSection("🐥", "Toni-Tipp", `<p>${card.toniTipp}</p>`)}
+      <div class="writing-card-actions">
+        <button class="big-action-button writing-action-button" type="button" data-writing-action="next">Nächste Karte</button>
+        <button class="big-action-button writing-action-button" type="button" data-writing-action="random">Zufallskarte</button>
+        <button class="big-action-button writing-action-button is-light" type="button" data-writing-action="back">Zurück zur Auswahl</button>
+        <button class="big-action-button writing-action-button is-light" type="button" data-writing-action="home">🏠 Home</button>
+      </div>
+    </article>
+  `;
+}
+
+function renderCardSection(icon, title, content) {
+  return `
+    <section class="writing-card-section">
+      <h4><span aria-hidden="true">${icon}</span> ${title}</h4>
+      ${content}
+    </section>
+  `;
+}
+
+function renderCardList(items) {
+  return `<ul>${items.map((item) => `<li>${item}</li>`).join("")}</ul>`;
+}
+
+function renderWordChips(words) {
+  return `
+    <div class="word-chip-list">
+      ${words.map((word) => `
+        <button class="word-chip" type="button" data-writing-word="${word}">
+          ${word}
+        </button>
+      `).join("")}
+    </div>
+  `;
+}
+
+function getWritingCards(area) {
+  return SCHREIBKARTEN.filter((card) => card.bereich === area);
+}
+
+function handleWritingClick(event) {
+  const areaButton = event.target.closest("[data-writing-area]");
+  if (areaButton) {
+    state.writingArea = areaButton.dataset.writingArea;
+    state.writingCardIndex = 0;
+    render();
+    scrollToTop();
+    return;
+  }
+
+  const wordButton = event.target.closest("[data-writing-word]");
+  if (wordButton) {
+    searchDictionaryForWritingWord(wordButton.dataset.writingWord);
+    return;
+  }
+
+  const actionButton = event.target.closest("[data-writing-action]");
+  if (!actionButton) {
+    return;
+  }
+
+  handleWritingAction(actionButton.dataset.writingAction);
+}
+
+function handleWritingAction(action) {
+  const cards = getWritingCards(state.writingArea);
+
+  if (action === "home") {
+    setRoute("portal");
+    return;
+  }
+
+  if (action === "back") {
+    state.writingArea = "";
+    state.writingCardIndex = 0;
+    render();
+    scrollToTop();
+    return;
+  }
+
+  if (!cards.length) {
+    return;
+  }
+
+  if (action === "next") {
+    state.writingCardIndex = (state.writingCardIndex + 1) % cards.length;
+  }
+
+  if (action === "random") {
+    const nextIndex = pickRandomIndex(cards.length);
+    state.writingCardIndex = cards.length > 1 && nextIndex === state.writingCardIndex
+      ? (nextIndex + 1) % cards.length
+      : nextIndex;
+  }
+
+  render();
+  scrollToTop();
+}
+
+function searchDictionaryForWritingWord(word) {
+  state.query = word.trim().toLowerCase();
+  searchInput.value = word.trim();
+  state.route = "dictionary";
+  render();
+  scrollToTop();
+}
+
 function setRoute(route) {
   if (!route) {
     return;
@@ -402,6 +576,10 @@ function pickRandom(items) {
   return items[Math.floor(Math.random() * items.length)];
 }
 
+function pickRandomIndex(length) {
+  return Math.floor(Math.random() * length);
+}
+
 function loadFavorites() {
   try {
     return JSON.parse(localStorage.getItem(FAVORITE_KEY) || localStorage.getItem(OLD_FAVORITE_KEY)) || [];
@@ -412,4 +590,8 @@ function loadFavorites() {
 
 function saveFavorites() {
   localStorage.setItem(FAVORITE_KEY, JSON.stringify(state.favorites));
+}
+
+if ("serviceWorker" in navigator && location.protocol !== "file:") {
+  navigator.serviceWorker.register("service-worker.js").catch(() => {});
 }

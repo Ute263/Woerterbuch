@@ -3,11 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#1f6fbc">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Tonis Sprachwelt">
     <title>Tonis Sprachwelt</title>
     <meta
       name="description"
       content="Tonis Sprachwelt der Antonius Grundschule Kevelaer mit Wörterbuch, Schreibwerkstatt, Geschichtenwürfel und Lesewelt."
     >
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="assets/toni.png">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -102,55 +107,13 @@
         <section id="view-writing" class="view" aria-labelledby="writing-title">
           <button class="home-button" type="button" data-route="portal">🏠 Home</button>
           <div class="section-heading">
-            <h2 id="writing-title">Schreibwerkstatt</h2>
+            <h2 id="writing-title">Tonis Schreibwerkstatt</h2>
+            <p class="writing-intro">
+              Wähle eine Aufgabe aus. Schreibe mit Bleistift in dein Heft oder in dein Mini-Buch.
+            </p>
           </div>
-          <div class="learning-grid">
-            <article class="learning-card">
-              <h3>Satzanfänge</h3>
-              <ul>
-                <li>Heute …</li>
-                <li>Plötzlich …</li>
-                <li>Dann …</li>
-                <li>Auf einmal …</li>
-                <li>Zum Glück …</li>
-                <li>Am Ende …</li>
-                <li>Eines Tages …</li>
-                <li>Danach …</li>
-              </ul>
-            </article>
-            <article class="learning-card">
-              <h3>Schreibideen</h3>
-              <ul>
-                <li>Toni findet einen Schatz.</li>
-                <li>Toni macht Ferien.</li>
-                <li>Toni rettet ein Tier.</li>
-                <li>Toni trifft einen Drachen.</li>
-                <li>Toni besucht die WM.</li>
-                <li>Toni hat Geburtstag.</li>
-              </ul>
-            </article>
-            <article class="learning-card">
-              <h3>Mini-Bücher</h3>
-              <ul>
-                <li>Toni macht Ferien</li>
-                <li>Toni hat Geburtstag</li>
-                <li>Toni rettet ein Tier</li>
-                <li>Toni trifft einen Drachen</li>
-                <li>Toni besucht die WM</li>
-                <li>Toni findet einen Schatz</li>
-              </ul>
-            </article>
-            <article class="learning-card">
-              <h3>Text prüfen</h3>
-              <ul class="check-list">
-                <li>☐ Ich habe groß angefangen.</li>
-                <li>☐ Ich habe Fingerabstände gelassen.</li>
-                <li>☐ Ich habe einen Punkt gesetzt.</li>
-                <li>☐ Ich habe mein Wort im Wörterbuch kontrolliert.</li>
-                <li>☐ Ich habe meinen Satz noch einmal gelesen.</li>
-              </ul>
-            </article>
-          </div>
+          <div id="writing-area-grid" class="writing-area-grid" aria-live="polite"></div>
+          <div id="writing-card-view" class="writing-card-view" aria-live="polite" hidden></div>
         </section>
 
         <section id="view-story" class="view" aria-labelledby="story-title">
@@ -205,6 +168,7 @@
     <button id="scroll-top-button" class="scroll-top-button" type="button" hidden>↑ Nach oben</button>
 
     <script src="words.js"></script>
+    <script src="schreibkarten.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

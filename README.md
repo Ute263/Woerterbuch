@@ -7,7 +7,7 @@ Die App ist vollständig statisch und läuft ohne Anmeldung, Datenbank oder exte
 ## Bereiche
 
 - `Wörterbuch`: Themenbände mit Suche, Vorlesen und Favoriten.
-- `Schreibwerkstatt`: Satzanfänge, Schreibideen, Mini-Bücher und eine kleine Prüfliste.
+- `Schreibwerkstatt`: Digitale Aufgabenkarten mit Denkfragen, Satzanfängen, Worthelfern und Schreibtipps.
 - `Geschichtenwürfel`: Würfelt aus `Wer?`, `Wo?` und `Was passiert?` eine neue Schreibidee.
 - `Lesewelt`: Platzhalter für Silbengeschichten, Lesemalaufgaben, Leserätsel und starke Leser.
 
@@ -27,7 +27,10 @@ Auf dem Mac geht das zum Beispiel so:
    - `index.html`
    - `style.css`
    - `words.js`
+   - `schreibkarten.js`
    - `app.js`
+   - `manifest.json`
+   - `service-worker.js`
    - `assets/`
    - `README.md`
 3. Öffne in GitHub die Einstellungen des Repositorys.
@@ -36,6 +39,10 @@ Auf dem Mac geht das zum Beispiel so:
 6. Speichere die Einstellung.
 
 Nach kurzer Zeit zeigt GitHub den Link zur App an.
+
+## Schreibwerkstatt
+
+Tonis Schreibwerkstatt enthält digitale Aufgabenkarten mit Denkfragen, Satzanfängen, Worthelfern und Schreibtipps. Die Kinder schreiben weiterhin handschriftlich ins Heft, auf Arbeitsblätter oder in Mini-Bücher.
 
 ## Neue Wörter ergänzen
 

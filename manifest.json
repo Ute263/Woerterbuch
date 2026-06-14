@@ -1,0 +1,18 @@
+{
+  "name": "Tonis Sprachwelt",
+  "short_name": "Sprachwelt",
+  "description": "Deutsch-Lernportal der Antonius Grundschule Kevelaer.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fffefa",
+  "theme_color": "#1f6fbc",
+  "icons": [
+    {
+      "src": "assets/toni.png",
+      "sizes": "214x320",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
