@@ -9,7 +9,7 @@ Die App ist vollständig statisch und läuft ohne Anmeldung, Datenbank oder exte
 - `Wörterbuch`: Themenbände mit Suche, Vorlesen und Favoriten.
 - `Schreibwerkstatt`: Digitale Aufgabenkarten mit Denkfragen, Satzanfängen, Worthelfern und Schreibtipps.
 - `Geschichtenwürfel`: Würfelt aus `Wer?`, `Wo?` und `Was passiert?` eine neue Schreibidee.
-- `Lesewelt`: Platzhalter für Silbengeschichten, Lesemalaufgaben, Leserätsel und starke Leser.
+- `Lesewelt`: Kurze Lesetexte und Lesekarten mit Aufgaben zum genauen Lesen, Textverständnis, Vorlesen und Lies-und-male-Aufgaben.
 
 ## Lokal öffnen
 
@@ -28,6 +28,7 @@ Auf dem Mac geht das zum Beispiel so:
    - `style.css`
    - `words.js`
    - `schreibkarten.js`
+   - `lesetexte.js`
    - `app.js`
    - `manifest.json`
    - `service-worker.js`
@@ -43,6 +44,17 @@ Nach kurzer Zeit zeigt GitHub den Link zur App an.
 ## Schreibwerkstatt
 
 Tonis Schreibwerkstatt enthält digitale Aufgabenkarten mit Denkfragen, Satzanfängen, Worthelfern und Schreibtipps. Die Kinder schreiben weiterhin handschriftlich ins Heft, auf Arbeitsblätter oder in Mini-Bücher.
+
+## Lesewelt
+
+Tonis Lesewelt enthält kurze Lesetexte und Lesekarten. Die Kinder lesen am iPad oder auf Papier und bearbeiten die Aufgaben handschriftlich. Es werden keine Schülertexte eingegeben oder gespeichert.
+
+Die Lesewelt hat vier Bereiche:
+
+- `Lies und male`
+- `Lesedetektiv`
+- `Texte verstehen`
+- `Vorlesen`
 
 ## Neue Wörter ergänzen
 

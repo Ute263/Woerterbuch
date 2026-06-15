@@ -226,7 +226,8 @@ h2 {
   margin: 10px 0 18px;
 }
 
-.writing-intro {
+.writing-intro,
+.reading-intro {
   max-width: 820px;
   margin: 10px 0 0;
   color: var(--muted);
@@ -267,6 +268,7 @@ h2 {
 
 .portal-grid,
 .writing-area-grid,
+.reading-area-grid,
 .learning-grid,
 .story-grid {
   display: grid;
@@ -274,12 +276,14 @@ h2 {
 }
 
 .portal-grid,
-.writing-area-grid {
+.writing-area-grid,
+.reading-area-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .portal-tile,
-.writing-area-tile {
+.writing-area-tile,
+.reading-area-tile {
   display: flex;
   align-items: center;
   gap: 18px;
@@ -298,7 +302,9 @@ h2 {
 .portal-tile:hover,
 .portal-tile:focus-visible,
 .writing-area-tile:hover,
-.writing-area-tile:focus-visible {
+.writing-area-tile:focus-visible,
+.reading-area-tile:hover,
+.reading-area-tile:focus-visible {
   transform: translateY(-3px);
   outline: 5px solid rgba(255, 230, 109, 0.74);
 }
@@ -384,7 +390,8 @@ h2 {
   font-size: clamp(1.25rem, 3vw, 1.7rem);
 }
 
-.writing-card-view {
+.writing-card-view,
+.reading-card-view {
   margin-top: 18px;
 }
 
@@ -430,6 +437,16 @@ h2 {
   color: var(--ink);
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.08;
+}
+
+.reading-task-card {
+  max-width: 980px;
+}
+
+.reading-text {
+  font-size: clamp(1.3rem, 2.6vw, 1.65rem) !important;
+  font-weight: 900 !important;
+  line-height: 1.6 !important;
 }
 
 .writing-card-section {
@@ -721,6 +738,7 @@ h2 {
 @media (max-width: 900px) {
   .portal-grid,
   .writing-area-grid,
+  .reading-area-grid,
   .tile-grid,
   .word-grid,
   .learning-grid,
@@ -750,6 +768,7 @@ h2 {
 
   .portal-grid,
   .writing-area-grid,
+  .reading-area-grid,
   .tile-grid,
   .learning-grid,
   .story-grid {
@@ -757,7 +776,8 @@ h2 {
   }
 
   .portal-tile,
-  .writing-area-tile {
+  .writing-area-tile,
+  .reading-area-tile {
     min-height: 138px;
   }
 

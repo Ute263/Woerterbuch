@@ -1,4 +1,4 @@
-const CACHE_NAME = "tonis-sprachwelt-v4";
+const CACHE_NAME = "tonis-sprachwelt-v6";
 const ASSETS = [
   "./",
   "index.html",
@@ -6,8 +6,12 @@ const ASSETS = [
   "app.js",
   "words.js",
   "schreibkarten.js",
+  "lesetexte.js",
   "manifest.json",
-  "assets/toni.png"
+  "assets/toni.png",
+  "assets/app-icon.png",
+  "assets/app-icon-192.png",
+  "assets/app-icon-512.png"
 ];
 
 self.addEventListener("install", (event) => {

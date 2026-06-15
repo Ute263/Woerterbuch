@@ -7,8 +7,8 @@ const THEMES = [
   { name: "Spielzeug", route: "toys", emoji: "🎲", ready: true },
   { name: "Familie und Menschen", route: "people", emoji: "👨‍👩‍👧", ready: true },
   { name: "Zuhause", route: "homePlace", emoji: "🏠", ready: true },
-  { name: "Tunwörter", route: "verbs", emoji: "🏃", ready: true },
-  { name: "Wiewörter", route: "adjectives", emoji: "🌈", ready: true }
+  { name: "Verben", route: "verbs", emoji: "🏃", ready: true },
+  { name: "Adjektive", route: "adjectives", emoji: "🌈", ready: true }
 ];
 
 const BANDS = {
@@ -61,16 +61,16 @@ const BANDS = {
     categories: ["Alle Zuhausewörter", "Zimmer", "Möbel", "Küche", "Bad"]
   },
   verbs: {
-    thema: "Tunwörter",
-    title: "Band Tunwörter",
-    allCategory: "Alle Tunwörter",
-    categories: ["Alle Tunwörter", "Bewegung", "Schule", "Spielen", "Gefühle zeigen"]
+    thema: "Verben",
+    title: "Band Verben",
+    allCategory: "Alle Verben",
+    categories: ["Alle Verben", "Bewegung", "Schule", "Spielen", "Gefühle zeigen"]
   },
   adjectives: {
-    thema: "Wiewörter",
-    title: "Band Wiewörter",
-    allCategory: "Alle Wiewörter",
-    categories: ["Alle Wiewörter", "Aussehen", "Größe", "Gefühl", "Bewegung"]
+    thema: "Adjektive",
+    title: "Band Adjektive",
+    allCategory: "Alle Adjektive",
+    categories: ["Alle Adjektive", "Aussehen", "Größe", "Gefühl", "Bewegung"]
   }
 };
 
@@ -90,6 +90,12 @@ const WRITING_AREAS = [
   { name: "Geschichtenideen", emoji: "🎲" },
   { name: "Starke Schreiber", emoji: "⭐" }
 ];
+const READING_AREAS = [
+  { name: "Lies und male", emoji: "🎨" },
+  { name: "Lesedetektiv", emoji: "🔎" },
+  { name: "Texte verstehen", emoji: "🧠" },
+  { name: "Vorlesen", emoji: "🎭" }
+];
 
 const state = {
   route: "portal",
@@ -97,7 +103,9 @@ const state = {
   query: "",
   favorites: loadFavorites(),
   writingArea: "",
-  writingCardIndex: 0
+  writingCardIndex: 0,
+  readingArea: "",
+  readingCardIndex: 0
 };
 
 const views = {
@@ -123,6 +131,9 @@ const searchInput = document.querySelector("#search-input");
 const writingAreaGrid = document.querySelector("#writing-area-grid");
 const writingCardView = document.querySelector("#writing-card-view");
 const writingView = document.querySelector("#view-writing");
+const readingAreaGrid = document.querySelector("#reading-area-grid");
+const readingCardView = document.querySelector("#reading-card-view");
+const readingView = document.querySelector("#view-reading");
 const navButtons = document.querySelectorAll("[data-route]");
 const scrollTopButton = document.querySelector("#scroll-top-button");
 const rollStoryButton = document.querySelector("#roll-story-button");
@@ -146,6 +157,7 @@ searchInput.addEventListener("input", (event) => {
 
 rollStoryButton.addEventListener("click", rollStory);
 writingView.addEventListener("click", handleWritingClick);
+readingView.addEventListener("click", handleReadingClick);
 window.addEventListener("scroll", updateScrollTopButton, { passive: true });
 setInterval(updateScrollTopButton, 250);
 scrollTopButton.addEventListener("click", scrollToTop);
@@ -197,6 +209,7 @@ function render() {
   renderHomeSearch();
   renderBandView();
   renderWritingView();
+  renderReadingView();
   renderWordCards(favoriteGrid, getFavoriteWords(), "Tippe auf einen Stern. Dann findest du dein Wort hier wieder.");
 }
 
@@ -386,6 +399,75 @@ function renderWritingView() {
   renderWritingCard(cards[state.writingCardIndex], cards.length);
 }
 
+function renderReadingView() {
+  if (state.route !== "reading") {
+    return;
+  }
+
+  if (!state.readingArea) {
+    renderReadingSelection();
+    return;
+  }
+
+  const cards = getReadingCards(state.readingArea);
+  if (!cards.length) {
+    state.readingArea = "";
+    renderReadingSelection();
+    return;
+  }
+
+  state.readingCardIndex = Math.min(state.readingCardIndex, cards.length - 1);
+  renderReadingCard(cards[state.readingCardIndex], cards.length);
+}
+
+function renderReadingSelection() {
+  readingAreaGrid.hidden = false;
+  readingCardView.hidden = true;
+  readingCardView.innerHTML = "";
+  readingAreaGrid.innerHTML = READING_AREAS.map((area) => {
+    const count = getReadingCards(area.name).length;
+    return `
+      <button class="reading-area-tile" type="button" data-reading-area="${area.name}">
+        <span class="portal-emoji" aria-hidden="true">${area.emoji}</span>
+        <span>
+          <span class="tile-title">${area.name}</span>
+          <span class="tile-note">${count} Karten</span>
+        </span>
+      </button>
+    `;
+  }).join("");
+}
+
+function renderReadingCard(card, totalCards) {
+  readingAreaGrid.hidden = true;
+  readingCardView.hidden = false;
+  const textSection = card.text
+    ? renderCardSection("📖", "Lesetext", `<p class="reading-text">${card.text}</p>`)
+    : "";
+
+  readingCardView.innerHTML = `
+    <article class="writing-task-card reading-task-card">
+      <div class="writing-card-topline">
+        <span class="card-number">Karte ${card.nummer} von ${totalCards}</span>
+        <span class="card-area">${card.bereich}</span>
+        <span class="card-area">Level: ${card.level}</span>
+      </div>
+      <h3>${card.titel}</h3>
+      ${textSection}
+      ${renderCardSection("✏️", "Aufgaben", renderCardList(card.aufgaben))}
+      ${renderCardSection("❓", "Fragen", renderCardList(card.fragen))}
+      ${renderCardSection("💡", "Lesetipps", renderCardList(card.lesetipps))}
+      ${renderCardSection("🐥", "Toni-Tipp", `<p>${card.toniTipp}</p>`)}
+      <div class="writing-card-actions">
+        <button class="big-action-button writing-action-button" type="button" data-reading-action="next">Nächste Karte</button>
+        <button class="big-action-button writing-action-button" type="button" data-reading-action="random">Zufallskarte</button>
+        <button class="big-action-button writing-action-button is-light" type="button" data-reading-action="back">Zurück zur Lesewelt</button>
+        <button class="big-action-button writing-action-button is-light" type="button" data-reading-action="home">🏠 Home</button>
+      </div>
+    </article>
+  `;
+}
+
 function renderWritingSelection() {
   writingAreaGrid.hidden = false;
   writingCardView.hidden = true;
@@ -459,6 +541,10 @@ function getWritingCards(area) {
   return SCHREIBKARTEN.filter((card) => card.bereich === area);
 }
 
+function getReadingCards(area) {
+  return LESETEXTE.filter((card) => card.bereich === area);
+}
+
 function handleWritingClick(event) {
   const areaButton = event.target.closest("[data-writing-area]");
   if (areaButton) {
@@ -481,6 +567,24 @@ function handleWritingClick(event) {
   }
 
   handleWritingAction(actionButton.dataset.writingAction);
+}
+
+function handleReadingClick(event) {
+  const areaButton = event.target.closest("[data-reading-area]");
+  if (areaButton) {
+    state.readingArea = areaButton.dataset.readingArea;
+    state.readingCardIndex = 0;
+    render();
+    scrollToTop();
+    return;
+  }
+
+  const actionButton = event.target.closest("[data-reading-action]");
+  if (!actionButton) {
+    return;
+  }
+
+  handleReadingAction(actionButton.dataset.readingAction);
 }
 
 function handleWritingAction(action) {
@@ -518,6 +622,41 @@ function handleWritingAction(action) {
   scrollToTop();
 }
 
+function handleReadingAction(action) {
+  const cards = getReadingCards(state.readingArea);
+
+  if (action === "home") {
+    setRoute("portal");
+    return;
+  }
+
+  if (action === "back") {
+    state.readingArea = "";
+    state.readingCardIndex = 0;
+    render();
+    scrollToTop();
+    return;
+  }
+
+  if (!cards.length) {
+    return;
+  }
+
+  if (action === "next") {
+    state.readingCardIndex = (state.readingCardIndex + 1) % cards.length;
+  }
+
+  if (action === "random") {
+    const nextIndex = pickRandomIndex(cards.length);
+    state.readingCardIndex = cards.length > 1 && nextIndex === state.readingCardIndex
+      ? (nextIndex + 1) % cards.length
+      : nextIndex;
+  }
+
+  render();
+  scrollToTop();
+}
+
 function searchDictionaryForWritingWord(word) {
   state.query = word.trim().toLowerCase();
   searchInput.value = word.trim();
@@ -536,11 +675,18 @@ function setRoute(route) {
     searchInput.value = "";
     state.writingArea = "";
     state.writingCardIndex = 0;
+    state.readingArea = "";
+    state.readingCardIndex = 0;
   }
 
   if (route === "writing" && state.route !== "writing") {
     state.writingArea = "";
     state.writingCardIndex = 0;
+  }
+
+  if (route === "reading" && state.route !== "reading") {
+    state.readingArea = "";
+    state.readingCardIndex = 0;
   }
 
   state.route = route;

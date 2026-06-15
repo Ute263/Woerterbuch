@@ -18,7 +18,7 @@ const SCHREIBKARTEN = [
     fragen: ["Welches Tier magst du?", "Wie sieht es aus?", "Was kann es gut?"],
     satzanfaenge: ["Mein Lieblingstier ist ...", "Es hat ...", "Es kann ..."],
     worthelfer: ["Tier", "groß", "klein", "schnell", "lieb"],
-    schreibtipps: ["Schreibe mindestens drei Sätze.", "Benutze ein Wiewort.", "Male am Ende dein Tier."],
+    schreibtipps: ["Schreibe mindestens drei Sätze.", "Benutze ein Adjektiv.", "Male am Ende dein Tier."],
     toniTipp: "Suche dein Tier im Wörterbuch."
   },
   {
@@ -51,7 +51,7 @@ const SCHREIBKARTEN = [
     fragen: ["Welche Geräte gibt es?", "Mit wem spielst du?", "Was passiert?"],
     satzanfaenge: ["Auf dem Spielplatz ...", "Zuerst ...", "Dann ..."],
     worthelfer: ["Schaukel", "Rutsche", "Ball", "spielen", "lachen"],
-    schreibtipps: ["Schreibe ordentlich.", "Nutze mindestens ein Tunwort.", "Lies deinen Text einem Partner vor."],
+    schreibtipps: ["Schreibe ordentlich.", "Nutze mindestens ein Verb.", "Lies deinen Text einem Partner vor."],
     toniTipp: "Prüfe, ob man deine Wörter gut lesen kann."
   },
   {
@@ -62,7 +62,7 @@ const SCHREIBKARTEN = [
     fragen: ["Was isst du gern?", "Wie schmeckt es?", "Wann isst du es?"],
     satzanfaenge: ["Mein Lieblingsessen ist ...", "Es schmeckt ...", "Ich esse es ..."],
     worthelfer: ["essen", "lecker", "süß", "Brot", "Apfel"],
-    schreibtipps: ["Schreibe mindestens drei Sätze.", "Benutze ein Wiewort.", "Suche ein Essenswort im Wörterbuch."],
+    schreibtipps: ["Schreibe mindestens drei Sätze.", "Benutze ein Adjektiv.", "Suche ein Essenswort im Wörterbuch."],
     toniTipp: "Denke an den Punkt am Satzende."
   },
   {
@@ -95,7 +95,7 @@ const SCHREIBKARTEN = [
     fragen: ["Was wächst dort?", "Welche Tiere siehst du?", "Was machst du?"],
     satzanfaenge: ["Im Garten ...", "Ich sehe ...", "Unter dem Baum ..."],
     worthelfer: ["Garten", "Blume", "Baum", "Wiese", "Biene"],
-    schreibtipps: ["Schreibe mindestens drei Sätze.", "Benutze ein Wiewort.", "Male am Ende ein Bild."],
+    schreibtipps: ["Schreibe mindestens drei Sätze.", "Benutze ein Adjektiv.", "Male am Ende ein Bild."],
     toniTipp: "Lies deinen Satz nach dem Schreiben sofort noch einmal."
   },
   {
@@ -117,7 +117,7 @@ const SCHREIBKARTEN = [
     fragen: ["Wer verliert den Ball?", "Wo liegt er?", "Wer findet ihn?"],
     satzanfaenge: ["Toni spielt ...", "Plötzlich rollt ...", "Zum Glück ..."],
     worthelfer: ["Ball", "rollen", "suchen", "finden", "spielen"],
-    schreibtipps: ["Schreibe mindestens vier Sätze.", "Benutze ein Tunwort.", "Kontrolliere Ball oder spielen."],
+    schreibtipps: ["Schreibe mindestens vier Sätze.", "Benutze ein Verb.", "Kontrolliere Ball oder spielen."],
     toniTipp: "Schreibe langsam und deutlich."
   },
   {
@@ -139,7 +139,7 @@ const SCHREIBKARTEN = [
     fragen: ["Wie heißt dein Freund?", "Was macht ihr zusammen?", "Warum magst du ihn oder sie?"],
     satzanfaenge: ["Mein Freund heißt ...", "Wir spielen ...", "Ich mag ..."],
     worthelfer: ["Freund", "Freundin", "spielen", "nett", "helfen"],
-    schreibtipps: ["Schreibe freundlich.", "Benutze ein Wiewort.", "Kontrolliere Freund oder Freundin."],
+    schreibtipps: ["Schreibe freundlich.", "Benutze ein Adjektiv.", "Kontrolliere Freund oder Freundin."],
     toniTipp: "Schreibe Namen groß."
   },
   {
@@ -469,8 +469,8 @@ const SCHREIBKARTEN = [
     fragen: ["Wohin rollt er?", "Wer läuft hinterher?", "Was passiert?"],
     satzanfaenge: ["Der Ball rollt ...", "Toni rennt ...", "Dann ..."],
     worthelfer: ["Ball", "rollen", "rennen", "suchen", "finden"],
-    schreibtipps: ["Schreibe in der richtigen Reihenfolge.", "Setze Punkte.", "Nutze ein Tunwort."],
-    toniTipp: "Tunwörter machen deine Geschichte lebendig."
+    schreibtipps: ["Schreibe in der richtigen Reihenfolge.", "Setze Punkte.", "Nutze ein Verb."],
+    toniTipp: "Verben machen deine Geschichte lebendig."
   },
   {
     bereich: "Geschichtenideen",
@@ -656,8 +656,8 @@ const SCHREIBKARTEN = [
     fragen: ["Was liegt dort?", "Wer wartet dort?", "Was nimmt Toni mit?"],
     satzanfaenge: ["Der Regenbogen endet ...", "Im Garten sieht Toni ...", "Am Ende ..."],
     worthelfer: ["Regenbogen", "Garten", "Farbe", "finden", "freuen"],
-    schreibtipps: ["Schreibe farbig und freundlich.", "Nutze Wiewörter.", "Male den Regenbogen."],
-    toniTipp: "Wiewörter machen dein Bild im Kopf genauer."
+    schreibtipps: ["Schreibe farbig und freundlich.", "Nutze Adjektive.", "Male den Regenbogen."],
+    toniTipp: "Adjektive machen dein Bild im Kopf genauer."
   },
   {
     bereich: "Starke Schreiber",
@@ -810,30 +810,30 @@ const SCHREIBKARTEN = [
     fragen: ["Wie sieht das Tier aus?", "Wo lebt es?", "Was kann es gut?"],
     satzanfaenge: ["Das Tier heißt ...", "Es hat ...", "Es lebt ..."],
     worthelfer: ["Tier", "Fell", "groß", "klein", "schnell"],
-    schreibtipps: ["Benutze Wiewörter.", "Suche das Tier im Wörterbuch.", "Schreibe mindestens fünf Sätze."],
+    schreibtipps: ["Benutze Adjektive.", "Suche das Tier im Wörterbuch.", "Schreibe mindestens fünf Sätze."],
     toniTipp: "Beschreiben heißt genau hinschauen."
   },
   {
     bereich: "Starke Schreiber",
     nummer: 15,
-    titel: "Fünf Wiewörter",
-    auftrag: "Schreibe einen Text mit fünf Wiewörtern.",
-    fragen: ["Welche Wiewörter nutzt du?", "Wird dein Text genauer?", "Kann man sich alles besser vorstellen?"],
+    titel: "Fünf Adjektive",
+    auftrag: "Schreibe einen Text mit fünf Adjektiven.",
+    fragen: ["Welche Adjektive nutzt du?", "Wird dein Text genauer?", "Kann man sich alles besser vorstellen?"],
     satzanfaenge: ["Der ...", "Die ...", "Das ..."],
     worthelfer: ["schön", "groß", "klein", "bunt", "schnell"],
-    schreibtipps: ["Markiere deine Wiewörter.", "Lies den Text noch einmal.", "Prüfe, ob die Wörter passen."],
-    toniTipp: "Wiewörter machen deinen Text genauer."
+    schreibtipps: ["Markiere deine Adjektive.", "Lies den Text noch einmal.", "Prüfe, ob die Wörter passen."],
+    toniTipp: "Adjektive machen deinen Text genauer."
   },
   {
     bereich: "Starke Schreiber",
     nummer: 16,
-    titel: "Fünf Tunwörter",
-    auftrag: "Schreibe einen Text mit fünf Tunwörtern.",
+    titel: "Fünf Verben",
+    auftrag: "Schreibe einen Text mit fünf Verben.",
     fragen: ["Was machen die Figuren?", "Welche Verben passen?", "Wird dein Text lebendig?"],
     satzanfaenge: ["Toni ...", "Dann ...", "Danach ..."],
     worthelfer: ["laufen", "springen", "lachen", "suchen", "finden"],
-    schreibtipps: ["Markiere deine Tunwörter.", "Schreibe lebendige Sätze.", "Kontrolliere ein Verb im Wörterbuch."],
-    toniTipp: "Tunwörter zeigen, was passiert."
+    schreibtipps: ["Markiere deine Verben.", "Schreibe lebendige Sätze.", "Kontrolliere ein Verb im Wörterbuch."],
+    toniTipp: "Verben zeigen, was passiert."
   },
   {
     bereich: "Starke Schreiber",

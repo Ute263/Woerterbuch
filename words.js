@@ -2072,7 +2072,7 @@ const WORDS = [
     artikel: "",
     silben: "lau-fen",
     kategorie: "Bewegung",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "🏃"
   },
   {
@@ -2081,7 +2081,7 @@ const WORDS = [
     artikel: "",
     silben: "ge-hen",
     kategorie: "Bewegung",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "🚶"
   },
   {
@@ -2090,7 +2090,7 @@ const WORDS = [
     artikel: "",
     silben: "sprin-gen",
     kategorie: "Bewegung",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "🤸"
   },
   {
@@ -2099,7 +2099,7 @@ const WORDS = [
     artikel: "",
     silben: "hüp-fen",
     kategorie: "Bewegung",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "🦘"
   },
   {
@@ -2108,7 +2108,7 @@ const WORDS = [
     artikel: "",
     silben: "ren-nen",
     kategorie: "Bewegung",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "🏃"
   },
   {
@@ -2117,7 +2117,7 @@ const WORDS = [
     artikel: "",
     silben: "klet-tern",
     kategorie: "Bewegung",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "🧗"
   },
   {
@@ -2126,7 +2126,7 @@ const WORDS = [
     artikel: "",
     silben: "schwim-men",
     kategorie: "Bewegung",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "🏊"
   },
   {
@@ -2135,7 +2135,7 @@ const WORDS = [
     artikel: "",
     silben: "fah-ren",
     kategorie: "Bewegung",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "🚲"
   },
   {
@@ -2144,7 +2144,7 @@ const WORDS = [
     artikel: "",
     silben: "le-sen",
     kategorie: "Schule",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "📖"
   },
   {
@@ -2153,7 +2153,7 @@ const WORDS = [
     artikel: "",
     silben: "schrei-ben",
     kategorie: "Schule",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "✏️"
   },
   {
@@ -2162,7 +2162,7 @@ const WORDS = [
     artikel: "",
     silben: "ma-len",
     kategorie: "Schule",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "🎨"
   },
   {
@@ -2171,7 +2171,7 @@ const WORDS = [
     artikel: "",
     silben: "rech-nen",
     kategorie: "Schule",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "🔢"
   },
   {
@@ -2180,7 +2180,7 @@ const WORDS = [
     artikel: "",
     silben: "hö-ren",
     kategorie: "Schule",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "👂"
   },
   {
@@ -2189,7 +2189,7 @@ const WORDS = [
     artikel: "",
     silben: "spre-chen",
     kategorie: "Schule",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "💬"
   },
   {
@@ -2198,7 +2198,7 @@ const WORDS = [
     artikel: "",
     silben: "fra-gen",
     kategorie: "Schule",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "❓"
   },
   {
@@ -2207,7 +2207,7 @@ const WORDS = [
     artikel: "",
     silben: "ant-wor-ten",
     kategorie: "Schule",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "✅"
   },
   {
@@ -2216,7 +2216,7 @@ const WORDS = [
     artikel: "",
     silben: "spie-len",
     kategorie: "Spielen",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "🎲"
   },
   {
@@ -2225,7 +2225,7 @@ const WORDS = [
     artikel: "",
     silben: "bau-en",
     kategorie: "Spielen",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "🧱"
   },
   {
@@ -2234,7 +2234,7 @@ const WORDS = [
     artikel: "",
     silben: "wer-fen",
     kategorie: "Spielen",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "⚽"
   },
   {
@@ -2243,7 +2243,7 @@ const WORDS = [
     artikel: "",
     silben: "fan-gen",
     kategorie: "Spielen",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "👐"
   },
   {
@@ -2252,7 +2252,7 @@ const WORDS = [
     artikel: "",
     silben: "su-chen",
     kategorie: "Spielen",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "🔍"
   },
   {
@@ -2261,7 +2261,7 @@ const WORDS = [
     artikel: "",
     silben: "fin-den",
     kategorie: "Spielen",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "⭐"
   },
   {
@@ -2270,7 +2270,7 @@ const WORDS = [
     artikel: "",
     silben: "la-chen",
     kategorie: "Spielen",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "😄"
   },
   {
@@ -2279,7 +2279,7 @@ const WORDS = [
     artikel: "",
     silben: "sin-gen",
     kategorie: "Spielen",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "🎵"
   },
   {
@@ -2288,7 +2288,7 @@ const WORDS = [
     artikel: "",
     silben: "wei-nen",
     kategorie: "Gefühle zeigen",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "😢"
   },
   {
@@ -2297,7 +2297,7 @@ const WORDS = [
     artikel: "",
     silben: "lä-cheln",
     kategorie: "Gefühle zeigen",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "😊"
   },
   {
@@ -2306,7 +2306,7 @@ const WORDS = [
     artikel: "",
     silben: "hel-fen",
     kategorie: "Gefühle zeigen",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "🤝"
   },
   {
@@ -2315,7 +2315,7 @@ const WORDS = [
     artikel: "",
     silben: "trös-ten",
     kategorie: "Gefühle zeigen",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "🫶"
   },
   {
@@ -2324,7 +2324,7 @@ const WORDS = [
     artikel: "",
     silben: "strei-ten",
     kategorie: "Gefühle zeigen",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "⚡"
   },
   {
@@ -2333,7 +2333,7 @@ const WORDS = [
     artikel: "",
     silben: "ent-schul-di-gen",
     kategorie: "Gefühle zeigen",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "🙏"
   },
   {
@@ -2342,7 +2342,7 @@ const WORDS = [
     artikel: "",
     silben: "freu-en",
     kategorie: "Gefühle zeigen",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "😃"
   },
   {
@@ -2351,7 +2351,7 @@ const WORDS = [
     artikel: "",
     silben: "stau-nen",
     kategorie: "Gefühle zeigen",
-    thema: "Tunwörter",
+    thema: "Verben",
     emoji: "😮"
   },
   {
@@ -2360,7 +2360,7 @@ const WORDS = [
     artikel: "",
     silben: "schön",
     kategorie: "Aussehen",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "🌸"
   },
   {
@@ -2369,7 +2369,7 @@ const WORDS = [
     artikel: "",
     silben: "bunt",
     kategorie: "Aussehen",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "🌈"
   },
   {
@@ -2378,7 +2378,7 @@ const WORDS = [
     artikel: "",
     silben: "hell",
     kategorie: "Aussehen",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "☀️"
   },
   {
@@ -2387,7 +2387,7 @@ const WORDS = [
     artikel: "",
     silben: "dun-kel",
     kategorie: "Aussehen",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "🌙"
   },
   {
@@ -2396,7 +2396,7 @@ const WORDS = [
     artikel: "",
     silben: "sau-ber",
     kategorie: "Aussehen",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "✨"
   },
   {
@@ -2405,7 +2405,7 @@ const WORDS = [
     artikel: "",
     silben: "schmut-zig",
     kategorie: "Aussehen",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "🟤"
   },
   {
@@ -2414,7 +2414,7 @@ const WORDS = [
     artikel: "",
     silben: "rund",
     kategorie: "Aussehen",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "⚪"
   },
   {
@@ -2423,7 +2423,7 @@ const WORDS = [
     artikel: "",
     silben: "e-ckig",
     kategorie: "Aussehen",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "◼️"
   },
   {
@@ -2432,7 +2432,7 @@ const WORDS = [
     artikel: "",
     silben: "groß",
     kategorie: "Größe",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "🦒"
   },
   {
@@ -2441,7 +2441,7 @@ const WORDS = [
     artikel: "",
     silben: "klein",
     kategorie: "Größe",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "🐭"
   },
   {
@@ -2450,7 +2450,7 @@ const WORDS = [
     artikel: "",
     silben: "lang",
     kategorie: "Größe",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "📏"
   },
   {
@@ -2459,7 +2459,7 @@ const WORDS = [
     artikel: "",
     silben: "kurz",
     kategorie: "Größe",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "✂️"
   },
   {
@@ -2468,7 +2468,7 @@ const WORDS = [
     artikel: "",
     silben: "dick",
     kategorie: "Größe",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "🟤"
   },
   {
@@ -2477,7 +2477,7 @@ const WORDS = [
     artikel: "",
     silben: "dünn",
     kategorie: "Größe",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "➖"
   },
   {
@@ -2486,7 +2486,7 @@ const WORDS = [
     artikel: "",
     silben: "hoch",
     kategorie: "Größe",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "⬆️"
   },
   {
@@ -2495,7 +2495,7 @@ const WORDS = [
     artikel: "",
     silben: "un-ten",
     kategorie: "Bewegung",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "⬇️"
   },
   {
@@ -2504,7 +2504,7 @@ const WORDS = [
     artikel: "",
     silben: "froh",
     kategorie: "Gefühl",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "😊"
   },
   {
@@ -2513,7 +2513,7 @@ const WORDS = [
     artikel: "",
     silben: "trau-rig",
     kategorie: "Gefühl",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "😢"
   },
   {
@@ -2522,7 +2522,7 @@ const WORDS = [
     artikel: "",
     silben: "wü-tend",
     kategorie: "Gefühl",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "😡"
   },
   {
@@ -2531,7 +2531,7 @@ const WORDS = [
     artikel: "",
     silben: "mu-tig",
     kategorie: "Gefühl",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "🦁"
   },
   {
@@ -2540,7 +2540,7 @@ const WORDS = [
     artikel: "",
     silben: "ru-hig",
     kategorie: "Gefühl",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "😌"
   },
   {
@@ -2549,7 +2549,7 @@ const WORDS = [
     artikel: "",
     silben: "laut",
     kategorie: "Gefühl",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "🔊"
   },
   {
@@ -2558,7 +2558,7 @@ const WORDS = [
     artikel: "",
     silben: "lei-se",
     kategorie: "Gefühl",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "🤫"
   },
   {
@@ -2567,7 +2567,7 @@ const WORDS = [
     artikel: "",
     silben: "mü-de",
     kategorie: "Gefühl",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "😴"
   },
   {
@@ -2576,7 +2576,7 @@ const WORDS = [
     artikel: "",
     silben: "schnell",
     kategorie: "Bewegung",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "🏃"
   },
   {
@@ -2585,7 +2585,7 @@ const WORDS = [
     artikel: "",
     silben: "lang-sam",
     kategorie: "Bewegung",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "🐌"
   },
   {
@@ -2594,7 +2594,7 @@ const WORDS = [
     artikel: "",
     silben: "stark",
     kategorie: "Bewegung",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "💪"
   },
   {
@@ -2603,7 +2603,7 @@ const WORDS = [
     artikel: "",
     silben: "schwach",
     kategorie: "Bewegung",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "⬇️",
     bild: "assets/words/schwach.png"
   },
@@ -2613,7 +2613,7 @@ const WORDS = [
     artikel: "",
     silben: "wild",
     kategorie: "Bewegung",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "🐯"
   },
   {
@@ -2622,7 +2622,7 @@ const WORDS = [
     artikel: "",
     silben: "vor-sich-tig",
     kategorie: "Bewegung",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "👣"
   },
   {
@@ -2631,7 +2631,7 @@ const WORDS = [
     artikel: "",
     silben: "leicht",
     kategorie: "Bewegung",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "🪶"
   },
   {
@@ -2640,7 +2640,7 @@ const WORDS = [
     artikel: "",
     silben: "schwer",
     kategorie: "Bewegung",
-    thema: "Wiewörter",
+    thema: "Adjektive",
     emoji: "🪨"
   },
   {

@@ -13,7 +13,7 @@
       content="Tonis Sprachwelt der Antonius Grundschule Kevelaer mit Wörterbuch, Schreibwerkstatt, Geschichtenwürfel und Lesewelt."
     >
     <link rel="manifest" href="manifest.json">
-    <link rel="apple-touch-icon" href="assets/toni.png">
+    <link rel="apple-touch-icon" href="assets/app-icon-512.png">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -39,8 +39,8 @@
         <button class="nav-button" type="button" data-route="toys">Spielzeug</button>
         <button class="nav-button" type="button" data-route="people">Familie</button>
         <button class="nav-button" type="button" data-route="homePlace">Zuhause</button>
-        <button class="nav-button" type="button" data-route="verbs">Tunwörter</button>
-        <button class="nav-button" type="button" data-route="adjectives">Wiewörter</button>
+        <button class="nav-button" type="button" data-route="verbs">Verben</button>
+        <button class="nav-button" type="button" data-route="adjectives">Adjektive</button>
         <button class="nav-button" type="button" data-route="favorites">Meine Wörter</button>
       </nav>
 
@@ -142,26 +142,13 @@
         <section id="view-reading" class="view" aria-labelledby="reading-title">
           <button class="home-button" type="button" data-route="portal">🏠 Home</button>
           <div class="section-heading">
-            <h2 id="reading-title">Lesewelt</h2>
+            <h2 id="reading-title">Tonis Lesewelt</h2>
+            <p class="reading-intro">
+              Wähle eine Leseaufgabe aus. Lies genau. Bearbeite die Aufgabe auf Papier.
+            </p>
           </div>
-          <div class="learning-grid">
-            <article class="learning-card placeholder-card">
-              <h3>Silbengeschichten</h3>
-              <p>Kommt bald.</p>
-            </article>
-            <article class="learning-card placeholder-card">
-              <h3>Lesemalaufgaben</h3>
-              <p>Kommt bald.</p>
-            </article>
-            <article class="learning-card placeholder-card">
-              <h3>Leserätsel</h3>
-              <p>Kommt bald.</p>
-            </article>
-            <article class="learning-card placeholder-card">
-              <h3>Starke Leser</h3>
-              <p>Kommt bald.</p>
-            </article>
-          </div>
+          <div id="reading-area-grid" class="reading-area-grid" aria-live="polite"></div>
+          <div id="reading-card-view" class="reading-card-view" aria-live="polite" hidden></div>
         </section>
       </main>
     </div>
@@ -170,6 +157,7 @@
 
     <script src="words.js"></script>
     <script src="schreibkarten.js"></script>
+    <script src="lesetexte.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
