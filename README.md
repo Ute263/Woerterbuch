@@ -6,7 +6,7 @@ Die App ist vollständig statisch und läuft ohne Anmeldung, Datenbank oder exte
 
 ## Bereiche
 
-- `Wortforscher`: Wörterbuch, FRESCH, Rechtschreibung und Wort des Tages.
+- `Wortforscher`: Wörterbuch, Rechtschreibung und Wort des Tages.
 - `Wörterbuch`: Themenkacheln mit Suche, Vorlesen, Favoriten und Grundwortschatz-Label.
 - `Schreibwerkstatt`: Digitale Aufgabenkarten mit vorgeschalteten Übersichten, Denkfragen, Satzanfängen, Worthelfern und Schreibtipps.
 - `Geschichtenwürfel`: Würfelt aus `Wer?`, `Wo?` und `Was passiert?` eine neue Schreibidee.
@@ -60,18 +60,17 @@ Der Bereich `Geschichtenbilder` ist vorbereitet. Spätere Wimmelbilder werden al
 
 ## Wortforscher
 
-Der Wortforscher bündelt vier Bereiche:
+Der Wortforscher bündelt drei Bereiche:
 
 - `Wörterbuch`
-- `FRESCH`
 - `Rechtschreibung`
 - `Wort des Tages`
 
 Die Kinder lesen, untersuchen Wörter und bearbeiten Aufgaben weiterhin auf Papier. Es werden keine Schülertexte eingegeben oder gespeichert.
 
-Die Datei `grundwortschatz-nrw.js` enthält vorbereitete Wörter mit Silben, Wortart, FRESCH-Strategien und Themen. Wörter aus dieser Datei erscheinen im Wörterbuch mit dem Label `Grundwortschatz NRW`. Der Bereich `Wort des Tages` nutzt ausschließlich Wörter aus dieser Datei.
+Die Datei `grundwortschatz-nrw.js` enthält vorbereitete Wörter mit Silben, Wortart, FRESCH-Strategien und Themen. Wörter aus dieser Datei erscheinen im Wörterbuch mit dem Label `Grundwortschatz NRW`. Der Bereich `Wort des Tages` nutzt Wörter aus dieser Datei und verbindet sie mit den FRESCH-Strategien.
 
-Der Bereich `FRESCH` ist für sieben Strategien vorbereitet:
+Die FRESCH-Strategien bleiben als Symbole und Hilfen im Bereich `Wort des Tages` erhalten:
 
 - `Schwingen`
 - `Verlängern`
@@ -81,7 +80,7 @@ Der Bereich `FRESCH` ist für sieben Strategien vorbereitet:
 - `Groß- und Kleinschreibung`
 - `Nachschlagen`
 
-Die FRESCH-Karten sind als tägliches Sprachritual aufgebaut. Jede Karte arbeitet mit genau einem Wort und enthält nur eine Hauptaufgabe.
+Der Bereich `Wort des Tages` arbeitet als tägliches Sprachritual. Ein Klick auf `Neues Wort` erzeugt ein zufälliges Grundwortschatzwort. Die Karte zeigt nur Bild, Wort, passende Strategie, ein kurzes Beispiel und einen Arbeitsauftrag. Die Kinder finden Artikel, Silben, Wortart und Besonderheiten selbst auf Papier heraus.
 
 Die verbindlichen FRESCH-Symbole liegen im Ordner `assets/fresch/`:
 
