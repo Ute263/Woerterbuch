@@ -1,4 +1,4 @@
-const CACHE_NAME = "tonis-sprachwelt-v17";
+const CACHE_NAME = "tonis-sprachwelt-v18";
 const ASSETS = [
   "./",
   "index.html",
@@ -10,6 +10,8 @@ const ASSETS = [
   "lesetexte.js",
   "manifest.json",
   "assets/toni.png",
+  "apple-touch-icon.png",
+  "favicon.ico",
   "assets/fresch/schwingen.svg",
   "assets/fresch/verlaengern.svg",
   "assets/fresch/ableiten.svg",
